@@ -1,5 +1,5 @@
 import { showImage, streamingImages } from "shared/helper.ts";
-import { appendBody, asRef, Box, Content, css, Empty, Grid, Label, PrimaryButton, WebGenTheme } from "webgen/mod.ts";
+import { appendBody, asRef, Box, Color, Content, css, Empty, Grid, Label, PrimaryButton, WebGenTheme } from "webgen/mod.ts";
 import { API, stupidErrorAlert } from "../../spec/mod.ts";
 
 const params = new URLSearchParams(location.search);
@@ -33,7 +33,7 @@ appendBody(
             Grid(
                 showImage(API.getArtworkBySlugByShareByMusic({ path: { slug: data.s } }).then(stupidErrorAlert) as Promise<Blob>, "Drop Artwork").addStyle(css`
                     :host {
-                       filter: blur(20px) brightness(25%);
+                        filter: blur(20px) brightness(25%);
                         -webkit-filter: blur(20px) brightness(25%);
 
                         width: 100vw;
@@ -89,9 +89,5 @@ appendBody(
                 )),
             ),
         ),
-    ).addStyle(css`
-        :host {
-            --wg-primary: rgb(255, 171, 82);
-        }
-    `),
+    ).setPrimaryColor(new Color("#eb8c2d")),
 );

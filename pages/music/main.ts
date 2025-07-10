@@ -6,7 +6,7 @@ import "./pages/unpublishedDrops.ts";
 
 import { RegisterAuthRefresh, sheetStack } from "shared/helper.ts";
 import { Navigation } from "shared/navigation.ts";
-import { activeRoute, appendBody, Box, Content, createRoute, css, DialogContainer, FullWidthSection, PrimaryButton, StartRouting, WebGenTheme } from "webgen/mod.ts";
+import { activeRoute, appendBody, Box, Color, Content, createRoute, css, DialogContainer, FullWidthSection, PrimaryButton, StartRouting, WebGenTheme } from "webgen/mod.ts";
 import "../../assets/css/main.css";
 import "../../assets/css/music.css";
 import { DynaNavigation } from "../../components/nav.ts";
@@ -60,10 +60,9 @@ appendBody(
                     ),
             ),
         ),
-    )
+    ).setPrimaryColor(new Color("#eb8c2d"))
         .addStyle(css`
             :host {
-                --wg-primary: rgb(255, 171, 82);
                 --content-max-width: 1200px;
             }
         `),

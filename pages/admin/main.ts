@@ -12,7 +12,7 @@ import "./pages/takedown.ts";
 
 import { RegisterAuthRefresh, sheetStack } from "shared/helper.ts";
 import { Navigation } from "shared/navigation.ts";
-import { activeRoute, appendBody, Box, Content, createRoute, css, DialogContainer, FullWidthSection, PrimaryButton, StartRouting, WebGenTheme } from "webgen/mod.ts";
+import { activeRoute, appendBody, Box, Color, Content, createRoute, css, DialogContainer, FullWidthSection, PrimaryButton, StartRouting, WebGenTheme } from "webgen/mod.ts";
 import { DynaNavigation } from "../../components/nav.ts";
 import { oauthPage } from "./pages/oauth.ts";
 import { overviewPage } from "./pages/overview.ts";
@@ -51,12 +51,12 @@ appendBody(
                     ),
             ),
         ),
-    ).addStyle(css`
-        :host {
-            --wg-primary: #f81919;
-            --content-max-width: 1200px;
-        }
-    `),
+    ).setPrimaryColor(new Color("#f81919"))
+        .addStyle(css`
+            :host {
+                --content-max-width: 1200px;
+            }
+        `),
 );
 
 StartRouting();

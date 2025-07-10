@@ -1,6 +1,6 @@
 import { activeUser, allowedImageFormats, ErrorMessage, getSecondary, permCheck, ProfileData, RegisterAuthRefresh, sheetStack, showProfilePicture, streamingImages } from "shared/helper.ts";
 import { userHistoryEventEntry } from "shared/userHistoryEventEntry.ts";
-import { appendBody, asRef, asRefRecord, Box, CachedPages, Checkbox, Content, createCachedLoader, createFilePicker, createIndexPaginationLoader, createRoute, css, DateInput, DialogContainer, DropDown, Empty, FullWidthSection, Grid, Image, isMobile, Label, PrimaryButton, SecondaryButton, Spinner, StartRouting, TextAreaInput, TextButton, TextInput, WebGenTheme } from "webgen/mod.ts";
+import { appendBody, asRef, asRefRecord, Box, CachedPages, Checkbox, Color, Content, createCachedLoader, createFilePicker, createIndexPaginationLoader, createRoute, css, DateInput, DialogContainer, DropDown, Empty, FullWidthSection, Grid, Image, isMobile, Label, PrimaryButton, SecondaryButton, Spinner, StartRouting, TextAreaInput, TextButton, TextInput, WebGenTheme } from "webgen/mod.ts";
 import { templateArtwork } from "../../assets/imports.ts";
 import { DynaNavigation } from "../../components/nav.ts";
 import genres from "../../data/genres.json" with { type: "json" };
@@ -443,11 +443,7 @@ appendBody(
                     : Empty(),
             ).setGap().setMargin("1rem 0rem 0rem 0rem"),
         ).setContentMaxWidth("1230px"),
-    ).addStyle(css`
-        :host {
-            --wg-primary: rgb(255, 171, 82);
-        }
-    `),
+    ).setPrimaryColor(new Color("#eb8c2d")),
 );
 
 StartRouting();
