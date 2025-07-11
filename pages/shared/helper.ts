@@ -176,9 +176,7 @@ export const sheetStack = Sheets();
 
 sheetStack
     .setMinWidth("auto")
-    .setWidth("auto")
-    .setMaxWidth("70%")
-    .setJustifySelf("center");
+    .setWidth("auto");
 
 export function getYearList(): string[] {
     return new Array(new Date().getFullYear() - 2000 + 1)
