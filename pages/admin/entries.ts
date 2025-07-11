@@ -6,7 +6,7 @@ import { TypeSuffix } from "../music/views/list.ts";
 import { walletSheet } from "./pages/search.ts";
 import { editOAuthSheet } from "./sheets.ts";
 
-export function ReviewEntry(x: AdminDrop, small: boolean = false) {
+export function ReviewEntry(x: AdminDrop, small: boolean = false, typeSuffix: boolean = false) {
     return Entry(
         BasicEntry(
             Box(
@@ -17,7 +17,7 @@ export function ReviewEntry(x: AdminDrop, small: boolean = false) {
         )
             .onClick(() => location.href = `/c/music/edit?id=${x._id}`)
             .addPrefix(showPreviewImage(x).setWidth(small ? "50px" : "100px").setRadius("large"))
-            .addSuffix(TypeSuffix(x.type, true)),
+            .addSuffix(TypeSuffix(x.type, typeSuffix)),
     );
 }
 

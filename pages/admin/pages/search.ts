@@ -51,7 +51,7 @@ const userSheet = async (user: User) => {
         ).setTemplateColumns("auto 1fr 1fr").setGap(),
         Grid(
             Label("Drops").setTextSize("2xl").setFontWeight("bold"),
-            ...drops.map((drop) => ReviewEntry(drop, true)),
+            ...drops.map((drop) => ReviewEntry(drop, true, true)),
         ),
     ).setGap();
 };
@@ -134,7 +134,7 @@ createPage(
                     ? search.map((it) => {
                         switch (it._index) {
                             case "drops":
-                                return ReviewEntry(it._source);
+                                return ReviewEntry(it._source, true, true);
                             case "users":
                                 return Entry(BasicEntry(it._source.profile.username, `${it._source._id} - ${it._source.profile.email}`)).onPromiseClick(async () => {
                                     sheetStack.addSheet(await userSheet(it._source));
