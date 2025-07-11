@@ -324,7 +324,7 @@ appendBody(
                 ).setGap(),
                 Box(id.map((id) => ManageSongs(creationState.songs, id, userArtists, disabled))),
                 isAdmin ? Box(creationState.songs.map((songs) => Grid(asRef(songs.map((song) => Label(song.filename)))))) : Empty(),
-                TextInput(creationState.comments, "Comments").setDisabled(disabled),
+                TextAreaInput(creationState.comments, "Comments").setDisabled(disabled),
                 SecondaryButton("Save").setDisabled(disabled).onClick(() => {
                     save();
                 }),
